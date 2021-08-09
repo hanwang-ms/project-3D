@@ -4,6 +4,7 @@
     <title>Attribution Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/og.css" type="text/css" />
+    <script src="../../dist/@openglobus/og.esm.js"></script>
 </head>
 
 <body>
@@ -19,11 +20,11 @@
         import { XYZ } from '../../src/og/layer/XYZ.js';
         import { Extent } from '../../src/og/Extent.js';
         import { LonLat } from '../../src/og/LonLat.js';
-
+5
         document.getElementById("viewPoint").onclick = function () {
             const DIST = 2000;
             let viewPoi = new LonLat(9.98464, 46.06157, 3039);
-            let ell = globus.planet.ellipsoid;
+            let ell = globus.planet.ellipsoid;5555
             globus.planet.camera.flyDistance(ell.lonLatToCartesian(viewPoi), DIST);
         };
 

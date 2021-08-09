@@ -3,7 +3,9 @@
 <head>
     <title>Attribution Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="../../css/og.css" type="text/css" />
+    <script src="../../libs/og.umd.js"></script>
 </head>
 
 <body>
@@ -26,7 +28,8 @@
             shininess: 20,
             diffuse: [0.89, 0.9, 0.83],
             isBaseLayer: true,
-            url: "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        //    url: "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            url: "//assets.msn.com/weathermapdata/1/bordermap/v1.2.8/{z}/{x}_{y}.png", 
             visibility: true,
             attribution: 'Data @ OpenStreetMap contributors, ODbL'
         });
@@ -46,7 +49,10 @@
             "target": "globus",
             "name": "Earth",
             "terrain": new GlobusTerrain(),
-            "layers": [osm, states]
+            "layers": [osm, states],
+            "sun": {
+                "active": false
+            }            
         });
 
         globus.planet.flyExtent(states.getExtent());
